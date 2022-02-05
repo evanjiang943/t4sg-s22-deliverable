@@ -51,9 +51,10 @@ const CaseManagementContainer: React.FC = (props) => {
       <h5 className="title">Home Page </h5>
       <Grid container spacing={3}>
         {
-          data ? data.category.map((val:any, index:any) => {return <CaseCategory category_id={val.id} />;}) : "Something went wrong"
+          data ? data.category.map((val:any, index:any) => {
+            return <CaseCategory category_id={val.id} />;}) : "Something went wrong"
         }
-      </Grid>
+      </Grid> 
 
       <AddCaseModal
         onClose={() => setAddCaseModalOpen(false)}
