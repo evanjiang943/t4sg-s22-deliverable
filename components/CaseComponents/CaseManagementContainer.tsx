@@ -20,12 +20,12 @@ import AddTagModal from "./Modals/AddTagModal";
   in this variable 
 */
 export const ManagementContainerQuery = `
-query QueryCases {
-  category {
-    name
-    id
+  query QueryCases {
+    category {
+      name
+      id
+    }
   }
-}
 `;
 // END TODO
 
@@ -48,18 +48,11 @@ const CaseManagementContainer: React.FC = (props) => {
 
   return (
     <>
-      <h5 className="title">Home Page</h5>
+      <h5 className="title">Home Page </h5>
       <Grid container spacing={3}>
         {
-          CaseCategory = ManagementContainerQuery.map()
-          /*
-          FEATURE 1 TODO:
-          Use the data from the result of the query to render 
-          a CaseCategory for every category in the response.
-          Remember, the response is stored in the "data" variable!
-        */}
-
-        {/* END TODO */}
+          data ? data.category.map((val:any, index:any) => {return <CaseCategory category_id={val.id} />;}) : "Something went wrong"
+        }
       </Grid>
 
       <AddCaseModal
