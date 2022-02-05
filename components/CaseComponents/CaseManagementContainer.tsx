@@ -54,7 +54,7 @@ const CaseManagementContainer: React.FC = (props) => {
           data ? data.category.map((val:any, index:any) => {
             return <CaseCategory category_id={val.id} key={index} />;}) : "Something went wrong"
         }
-      </Grid> 
+      </Grid>  
 
       <AddCaseModal
         onClose={() => setAddCaseModalOpen(false)}
